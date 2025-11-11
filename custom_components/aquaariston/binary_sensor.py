@@ -5,6 +5,7 @@ from homeassistant.components.binary_sensor import (
     DEVICE_CLASS_POWER,
     DEVICE_CLASS_HEAT,
     DEVICE_CLASS_UPDATE,
+    BinarySensorDeviceClass,
     BinarySensorEntity,
 )
 from homeassistant.const import CONF_BINARY_SENSORS, CONF_NAME
@@ -40,7 +41,7 @@ _LOGGER = logging.getLogger(__name__)
 
 # Binary sensor types are defined like: Name, device class, icon
 BINARY_SENSORS = {
-    PARAM_ONLINE: (BINARY_SENSOR_ONLINE, DEVICE_CLASS_CONNECTIVITY, None),
+    PARAM_ONLINE: (BINARY_SENSOR_ONLINE, BinarySensorDeviceClass.CONNECTIVITY, None),
     PARAM_CHANGING_DATA: (BINARY_SENSOR_CHANGING_DATA, None, "mdi:cogs"),
     PARAM_UPDATE: (BINARY_SENSOR_UPDATE, DEVICE_CLASS_UPDATE, None),
     PARAM_ON: (BINARY_SENSOR_ON, DEVICE_CLASS_POWER, "mdi:power"),
